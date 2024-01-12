@@ -13,8 +13,6 @@ This Python script is designed to verify and convert badge images according to s
   - Converts images of any format to a 512x512 PNG badge.
 
 ## Requirements
-
-- Python 3
 - [OpenCV](https://pypi.org/project/opencv-python/) 
 - [NumPy](https://pypi.org/project/numpy/) 
 
@@ -93,6 +91,34 @@ Check if the colors of the badge give a 'happy' feeling.
 ##### Returns:
 
 - `bool`: True if the colors give a 'happy' feeling, False otherwise.
+
+#### `input_image_path()`
+
+Prompt the user to input the path of the image.
+
+##### Returns:
+
+- `str`: The user-input image path.
+
+#### `verify_and_convert_badge(image_path)`
+
+Verify and convert the badge based on the specified criteria.
+
+##### Parameters:
+
+- `image_path` (str): The file path of the badge image.
+
+##### Returns:
+
+- `tuple`: A tuple containing verification and conversion results.
+
+#### `main()`
+
+Main function to execute the script.
+
+##### Returns:
+
+- None
 
 ## License
 
