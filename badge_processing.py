@@ -124,7 +124,7 @@ def has_happy_colors(image):
         average_brightness = np.mean(brightness)
 
         # Define a threshold for darkness (adjust as needed)
-        brightness_threshold = 150
+        brightness_threshold = 120
 
         # Check if the average brightness is above the threshold
         return average_brightness > brightness_threshold
