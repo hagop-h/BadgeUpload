@@ -132,13 +132,58 @@ def has_happy_colors(image):
     except Exception as e:
         return str(e)
 
-# Example usage:
-image_path = "C:/Users/User/Desktop/image.png"
 
-# Verify the badge
-verification_result = verify_badge(image_path)
-print(verification_result)
+def input_image_path():
+    """
+    Prompt the user to input the path of the image.
 
-# Convert the badge
-conversion_result = convert_to_badge(image_path)
-print(conversion_result)
+    Returns:
+    - str: The user-input image path.
+    """
+    return input("Please enter the path of the image (e.g., /path/to/image.png):\n")
+
+
+def verify_and_convert_badge(image_path):
+    """
+    Verify and convert the badge based on the specified criteria.
+
+    Parameters:
+    - image_path (str): The file path of the badge image.
+
+    Returns:
+    - tuple: A tuple containing verification and conversion results.
+    """
+    try:
+        # Verify the badge
+        verification_result = verify_badge(image_path)
+
+        # Convert the badge
+        conversion_result = convert_to_badge(image_path)
+
+        return verification_result, conversion_result
+
+    except Exception as e:
+        return str(e), None
+
+
+def main():
+    print("Welcome to the Badge Verification and Conversion Script!")
+
+    try:
+        # Input the path of the image
+        image_path = input_image_path()
+
+        # Verify and convert the badge
+        verification_result, conversion_result = verify_and_convert_badge(image_path)
+
+        # Display results
+        print("\nVerification Result:", verification_result)
+        if conversion_result:
+            print("Conversion Result:", conversion_result)
+
+    except Exception as e:
+        print("An error occurred:", str(e))
+
+
+if __name__ == "__main__":
+    main()
