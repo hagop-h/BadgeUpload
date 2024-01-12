@@ -82,7 +82,7 @@ def is_inside_circle(image):
                 alpha = alpha_channel[y, x]
 
                 # Check if the pixel is nontransparent and inside the circle
-                if alpha > 0 and not is_inside_circle_point(x, y, center_x, center_y, radius):
+                if alpha > 300 and not is_inside_circle_point(x, y, center_x, center_y, radius):
                     return False
 
         return True
